@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { CiAt } from "react-icons/ci";
 import { GrClose } from "react-icons/gr";
-function Link({ children, href }: { children: React.ReactNode; href: string }) {
+import Link from "next/link"; // Import Link from next/link
+
+function CustomLink({ children, href, className }: { children: React.ReactNode; href: string; className: string }) {
     const [current, setCurrent] = useState("");
 
     useEffect(() => {
@@ -9,33 +11,26 @@ function Link({ children, href }: { children: React.ReactNode; href: string }) {
         setCurrent(window.location.pathname);
     }, []);
 
-    if (current === href) {
-        return (
-            <a
-                className="px-4 py-2 rounded-full bg-[#fff2] relative"
-                href={href}
-            >
-                {children}
-                <span className="absolute top-0 left-[50%] translate-x-[-50%] translate-y- rounded-full h-[4px] w-2 bg-white" />
-            </a>
-        );
-    }
-
     return (
-        <a className="px-4 py-2 rounded-full hover:bg-[#fff2] transition-colors duration-100" href={href}>
-            {children}
-        </a>
+        <Link href={href}>
+            <div className={`${className} ${current === href ? 'bg-[#fff2]' : ''}`}>
+                {children}
+            </div>
+        </Link>
     );
 }
+
 function Socials() {
     const [open, setOpen] = useState(false);
+
     const Social = ({ children, href }: { children: React.ReactNode, href: string }) => {
         return (
-          <a className="flex flex-row items-center text-gray-300 hover:text-white transition-colors duration-200" href={href}>
-            {children}
-          </a>
+            <CustomLink className="flex flex-row items-center text-gray-300 hover:text-white transition-colors duration-200" href={href}>
+                {children}
+            </CustomLink>
         );
-    }
+    };
+
     return (
         <>
             <div className="flex flex-row items-center gap-2">
@@ -51,6 +46,7 @@ function Socials() {
         </>     
     )
 }
+
 export default function Navbar() {
     return (
         <>
@@ -60,8 +56,8 @@ export default function Navbar() {
                     <p className="text-[10px] text-gray-200">Web Developer</p>
                 </div>
                 <nav className="z-50 fixed left-1/2 translate-x-[-150%] flex w-fit top-[1.3rem] shadow-xl shadow-black/30 768:fixed max-480:fixed max-480:left-1/2 max-480:-translate-x-1/2 p-1 gap-x-2 768:left-1/2 768:-translate-x-1/2 border-white/10 duration-300 border-[1px] bg-transparent rounded-full backdrop-blur-md ml-40">
-                    <Link href="/">Work</Link>
-                    <Link href="/info">Info</Link>
+                    <CustomLink href="/" className="px-4 py-2 rounded-full hover:bg-[#fff2] transition-colors duration-100">Work</CustomLink>
+                    <CustomLink href="/info" className="px-4 py-2 rounded-full hover:bg-[#fff2] transition-colors duration-100">Info</CustomLink>
                 </nav>
                 <Socials />
             </div>  

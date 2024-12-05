@@ -1,13 +1,14 @@
 import React from "react";
 import Logo from "./logo";
 import { FaYoutube, FaGithub, FaLinkedinIn, FaXTwitter, FaFileCode, FaCode } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function Footer() {
     const SocialButton = ({ children, href }: { children: React.ReactNode, href: string }) => {
         return (
-            <a target="_blank" className="flex cursor-hover flex-row text-3xl items-center text-gray-300 hover:text-white transition-colors duration-200" href={href}>
+            <Link target="_blank" className="flex cursor-hover flex-row text-3xl items-center text-gray-300 hover:text-white transition-colors duration-200" href={href}>
                 {children}
-            </a>
+            </Link>
         );
     }
     return (

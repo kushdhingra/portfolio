@@ -15,6 +15,7 @@ import { Project, ProjectProps } from "@/components/project";
 import { Kalnia } from "next/font/google";
 import Keyboard from "@/components/keyboard";
 import { BsGithub } from "react-icons/bs";
+import Link from "next/link";
 const font = Kalnia({ subsets: ['latin'] })
 function PythonCode () {
   return (
@@ -181,14 +182,16 @@ export default function Home() {
             <h1 className={`${font.className} text-7xl text-white drop-shadow-sm shadow-white`}>Hello 👋, I am Kush</h1>    
             <em className="text-gray-200 text-xl">Coding with passion</em>
             <div className="flex flex-row w-full items-center justify-center gap-6 mt-4">
-              <a className="cursor-hover p-2 bg-white drop-shadow-2xl backdrop-blur-md rounded-md flex flex-row justify-center items-center gap-2 text-black"><BsGithub /> View Github</a>
-              <a className="cursor-hover p-2 bg-transparent border-white transition-colors duration-500 hover:bg-white hover:text-black border-[1.5px] drop-shadow-2xl backdrop-blur-md rounded-md flex flex-row justify-center items-center gap-2">
+              <Link href="https://github.com/kushdhingra" className="cursor-hover p-2 bg-white drop-shadow-2xl backdrop-blur-md rounded-md flex flex-row justify-center items-center gap-2 text-black">
+                <BsGithub /> View Github
+              </Link>
+              <Link href="#projects" className="cursor-hover p-2 bg-transparent border-white transition-colors duration-500 hover:bg-white hover:text-black border-[1.5px] drop-shadow-2xl backdrop-blur-md rounded-md flex flex-row justify-center items-center gap-2">
                 <FaComputer /> View Projects
-              </a>
+              </Link>
             </div>
         </div>
       </div>
-      <div className="w-[100vw] mt-[50vh] space-y-8 h-fit p-4 bg-transparent flex flex-col items-center">
+      <div id="projects" className="w-[100vw] mt-[50vh] space-y-8 h-fit p-4 bg-transparent flex flex-col items-center">
         <div className="w-full text-center flex flex-col mt-20 animate-fadeIn">
             <h1 className={`${font.className} text-4xl text-white`}><FaComputer className="block mr-auto ml-auto" /> Projects</h1>    
         </div>

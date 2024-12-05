@@ -1,5 +1,6 @@
 import { NextPageContext } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { BsPerson } from 'react-icons/bs';
 import { FaHome } from 'react-icons/fa';
 
@@ -21,12 +22,12 @@ const ErrorPage = ({ statusCode }: ErrorProps) => {
           className="rounded-lg shadow-lg"
         />
         <div className="flex space-x-4 mt-5 flex-row items-center justify-center">
-            <a href="/info" className="px-4 flex-row flex items-center justify-center gap-2 py-2 rounded-lg bg-[#fff2] hover:bg-[#fff3] transition-colors duration-100">
+            <Link href="/info" className="px-4 flex-row flex items-center justify-center gap-2 py-2 rounded-lg bg-[#fff2] hover:bg-[#fff3] transition-colors duration-100">
                 <BsPerson /> Go to Info
-            </a>
-            <a href="/" className="px-4 flex-row flex items-center justify-center gap-2 py-2 rounded-lg bg-[#fff2] hover:bg-[#fff3] transition-colors duration-100">
+            </Link>
+            <Link href="/" className="px-4 flex-row flex items-center justify-center gap-2 py-2 rounded-lg bg-[#fff2] hover:bg-[#fff3] transition-colors duration-100">
                 <FaHome /> Go Home
-            </a>
+            </Link>
         </div>
       </div>
     </div>
