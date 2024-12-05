@@ -72,7 +72,7 @@ export default function Info() {
                             <FaCode className="ml-2" />
                         </h2>
                         <p className="text-xl">
-                            My first experience with coding was through small projects and online tutorials. Initially, I dabbled with HTML and CSS to create simple websites. As I gained confidence, I ventured into more advanced languages like JavaScript, Python, and eventually frameworks like React. Each new challenge sparked my love for problem-solving and deepened my desire to learn more.
+                            My first experience with coding was through small projects and online tutorials. Initially, I dabbled with HTML, CSS and Python to create simple websites. As I gained confidence, I ventured into more advanced languages like JavaScript and TypeScript, Advanced my knowledge in Python, and eventually frameworks like React. Each new challenge sparked my love for problem-solving and deepened my desire to learn more.
                         </p>
                     </div>
                     <div className="flex w-full md:w-1/2 justify-center">
