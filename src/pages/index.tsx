@@ -84,7 +84,7 @@ export default function Home() {
                 <div>
                   <button className="bg-[#1e1e2e] hover:text-[#cba6f7] hover:border-[#cba6f7] p-1 border-transparent border-2 w-[25vw] flex flex-row text-[15px] rounded-sm justify-center">
                     <MdOutlineSearch className="scale-x-[-1] text-1xl" />
-                    <span className="text-[12px]">Portfolio [WSL: Ubuntu]</span>
+                    <span className="text-[12px]">Portfolio</span>
                   </button>
                 </div>
                 <div className="flex flex-row items-center justify-end mt-[15px] w-full">
